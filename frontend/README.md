@@ -1,6 +1,6 @@
-# Webapp Tool für Projektportfoliomanagement
+# Tool for Projectportfoliomanagement
 
-**This is the WEB-part for managing projects.**
+**This is the WEB-part for the tool.**
 
 There is a global style sheet to change the look of the webapp under:
 
