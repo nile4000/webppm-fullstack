@@ -1,4 +1,6 @@
-# Backend Tool für Projektportfoliomanagement
+# Tool for Projectportfoliomanagement
+
+**This is the backend-part for the tool.**
 
 Prerequisites development environment:
 
