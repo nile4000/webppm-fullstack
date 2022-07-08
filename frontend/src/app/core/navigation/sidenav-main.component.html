@@ -1,0 +1,19 @@
+<div class="nav-container">
+  <mat-toolbar color="$dark-red">
+    <button class="icon-button" (click)="snav.toggle()">
+      <img class="icon" src="./././assets/img/logo.png" alt="Logo" />
+    </button>
+    <p></p>
+    <h4>Tool für Projektportfoliomanagement</h4>
+  </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav fixedTopGap="56">
+      <mat-nav-list>
+        <mat-list-item routerLink="/add-project/">
+          <mat-icon>note_add</mat-icon>Neues Projekt</mat-list-item
+        >
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content> <app-chart></app-chart></mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

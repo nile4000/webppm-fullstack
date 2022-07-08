@@ -1,0 +1,11 @@
+<div id="container" class="chart-container">
+  <highcharts-chart
+    [Highcharts]="Highcharts"
+    [constructorType]="'ganttChart'"
+    [options]="chartGantt | async"
+    class="card-element"></highcharts-chart>
+  <div class="button-group">
+    <button id="editButton" (click)="editPhase()">Phase Bearbeiten</button>
+    <button id="deleteButton" disabled>Projekt Löschen</button>
+  </div>
+</div>

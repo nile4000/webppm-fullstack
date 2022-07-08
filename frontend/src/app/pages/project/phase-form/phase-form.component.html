@@ -1,0 +1,33 @@
+<div class="form-container">
+  <h1>Phase bearbeiten</h1>
+  <form [formGroup]="phaseForm" (ngSubmit)="onSubmit()">
+    <mat-label for="phaseName">Phasenname</mat-label>
+    <input
+      matInput
+      formControlName="phaseName"
+      placeholder="Name angeben"
+      class="form-control" />
+    <mat-label for="phaseStart">Phasenstart</mat-label>
+    <input
+      matInput
+      formControlName="phaseStart"
+      placeholder="dd.MM.yyyy"
+      class="form-control" />
+    <mat-label for="phaseEnd">Phasenende</mat-label>
+    <input
+      matInput
+      formControlName="phaseEnd"
+      placeholder="dd.MM.yyyy"
+      class="form-control" />
+    <mat-label for="phaseCompleted">Erfüllung</mat-label>
+    <input
+      matInput
+      formControlName="phaseCompleted"
+      placeholder="Erledigungsgrad von 0 bis 100 angeben:"
+      class="form-control" />
+    <mat-checkbox color="primary" formControlName="phaseMilestone"
+      >Meilenstein</mat-checkbox
+    >
+    <button type="submit">Speichern</button>
+  </form>
+</div>

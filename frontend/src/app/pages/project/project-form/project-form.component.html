@@ -1,0 +1,41 @@
+<div class="form-container">
+  <h1>Neues Projekt erfassen</h1>
+  <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+    <mat-label for="projectNumber">Projekt-Id</mat-label>
+    <input
+      matInput
+      formControlName="projectNumber"
+      placeholder="Enter Number"
+      class="form-control"
+      disabled="true" />
+    <mat-label for="projectName">Projektname</mat-label>
+    <input
+      matInput
+      formControlName="projectName"
+      placeholder="Name angeben"
+      class="form-control" />
+    <mat-label for="projectDescription">Beschreibung</mat-label>
+    <input
+      matInput
+      formControlName="projectDescription"
+      placeholder="..."
+      class="form-control" />
+    <mat-form-field appearance="fill">
+      <mat-label>Startdatum</mat-label>
+      <input
+        matInput
+        formControlName="projectStart"
+        class="form-control" />
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Enddatum</mat-label>
+      <input
+        matInput
+        formControlName="projectEnd"
+        class="form-control"/>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <button type="submit">Speichern</button>
+  </form>
+</div>
