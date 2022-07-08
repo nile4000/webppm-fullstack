@@ -16,10 +16,10 @@ describe("AppComponent", () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'toolfuerprojektportfoliomanagement'`, () => {
+  it(`should have as title 'projectportfoliomanagement'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual("toolfuerprojektportfoliomanagement");
+    expect(app.title).toEqual("projectportfoliomanagement");
   });
 
   it("should render title", () => {
@@ -27,7 +27,7 @@ describe("AppComponent", () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector(".content span").textContent).toContain(
-      "toolfuerprojektportfoliomanagement app is running!"
+      "projectportfoliomanagement app is running!"
     );
   });
 });
