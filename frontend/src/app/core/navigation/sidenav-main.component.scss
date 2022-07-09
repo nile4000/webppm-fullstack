@@ -7,13 +7,20 @@ mat-sidenav {
 }
 
 mat-toolbar {
-  background-color: $dark-gray;
+  display: flex;
+  justify-content: space-between;
+}
+
+img {
+  width: 56px;
+  height: 46px;
+  overflow: hidden;
+  margin-top: -6px;
 }
 
 .nav-container {
   display: flex;
   flex-direction: column;
-  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;

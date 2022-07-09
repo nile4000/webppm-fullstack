@@ -71,6 +71,7 @@ import { PhaseFormComponent } from './pages/project/phase-form/phase-form.compon
     MatCheckboxModule,
   ],
   providers: [],
+  exports: [MatSidenavModule],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

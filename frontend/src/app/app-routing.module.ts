@@ -1,5 +1,5 @@
-import { ProjectFormComponent } from './pages/project/project-form/project-form.component';
 import { SidenavMain } from './core/navigation/sidenav-main.component';
+import { ProjectFormComponent } from './pages/project/project-form/project-form.component';
 import { PagenotfoundComponent } from './pages/error/pagenotfound/pagenotfound.component';
 import { PhaseFormComponent } from './pages/project/phase-form/phase-form.component';
 import { NgModule } from '@angular/core';

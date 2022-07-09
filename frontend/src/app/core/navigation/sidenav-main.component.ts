@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class SidenavMain {
   constructor(private projectService: ProjectService) {}
+
   ngOnInit(): void {
     this.projectService.getProjects();
   }
