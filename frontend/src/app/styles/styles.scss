@@ -81,7 +81,7 @@ button:disabled {
   padding-right: 100px;
 
   .chart {
-    width: 100%;
+    //width: 100%;
     height: auto;
     display: block;
   }
@@ -114,8 +114,6 @@ button:disabled {
   flex-direction: column;
   margin-top: 2rem;
   max-width: 1184px;
-  padding: 2rem;
-  width: 100%;
   background: white;
 }
 

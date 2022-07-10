@@ -1,8 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="sidenav-button"
-    ><mat-icon aria-hidden="true" (click)="inputSidenav.toggle()"
-      >menu</mat-icon
-    ></a
+  <a class="sidenav-button">
+    <mat-icon-button
+      aria-hidden="true"
+      aria-label="sidenav toggle opened"
+      (click)="inputSidenav.toggle()"
+      *ngIf="true">
+      <mat-icon *ngIf="!inputSidenav.opened; else showOpened">menu</mat-icon>
+      <ng-template #showOpened>
+        <mat-icon aria-label="sidenav toggle opened">menu_open</mat-icon>
+      </ng-template>
+    </mat-icon-button></a
   >
   <a class="navbar-brand" href="#"></a>
 </nav>
