@@ -1,33 +1,106 @@
 @import '../../styles/styles';
 @import '../../styles/variables';
 
-// Navigationelements are just used here
-mat-sidenav {
-  background-color: $light-gray;
+.sidenav {
+  background: inherit;
+  background: linear-gradient(0deg, $light-blue 0, $dark-gray 100%);
+  height: 100%;
+  width: 230px;
+  display: block;
+  box-shadow: 0 0 45px 0 rgba(0, 0, 0, 0.6);
+  margin-right: 0px;
+  // border-radius: 20px;
+  transition: 0.5s cubic-bezier(0.685, 0.473, 0.346, 1);
 }
 
-mat-toolbar {
-  display: flex;
-  justify-content: space-between;
+.logo {
+  position: relative;
+  padding: 0.5rem 0.7rem;
+  z-index: 4;
 }
 
-img {
-  width: 56px;
-  height: 46px;
-  overflow: hidden;
-  margin-top: -6px;
+.logo a.logo-mini {
+  opacity: 1;
+  float: left;
+  width: 34 px;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 12px;
 }
 
-.nav-container {
-  display: flex;
-  flex-direction: column;
-  top: 0;
+.logo a.logo-normal {
+  display: block;
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+mat-icon {
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+  color: $light-gray;
+}
+
+.logo:after {
+  content: '';
+  position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  right: 15px;
+  height: 1px;
+  width: calc(100% - 30px);
+  background: linear-gradient(to right, $light-gray, white);
 }
 
-.sidenav-container {
-  flex: 1;
-  flex-direction: column;
+.logo .simple-text {
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  display: block;
+  white-space: nowrap;
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  line-height: 30px;
+  overflow: hidden;
 }
+
+.logo-img img {
+  width: 35px;
+}
+
+.nav li > a {
+  margin: 10px 15px 0;
+  border-radius: 5px;
+  color: white;
+  width: 200px;
+  display: block;
+  text-decoration: none;
+  position: realtive;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.nav li > a i {
+  width: 20px;
+  margin-right: 10px;
+  font-size: 1.125rem;
+}
+
+.nav li > a:hover,
+.nav li > a:hover i {
+  color: $dark-blue;
+  transition: all 0.4s ease 0s;
+}
+
+// .nav li.active > a:before {
+//   content: ' ';
+//   position: absolute;
+//   height: 6px;
+//   width: 6px;
+//   top: 17px;
+//   left: -2px;
+//   background: white;
+//   border-radius: 50%;
+// }

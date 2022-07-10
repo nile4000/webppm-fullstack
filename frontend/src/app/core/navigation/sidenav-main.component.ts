@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['sidenav-main.component.scss'],
 })
 export class SidenavMain {
+  collapsed = false;
+
   constructor(private projectService: ProjectService) {}
 
   ngOnInit(): void {

@@ -31,6 +31,8 @@ import {
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ChartComponent } from './shared/component/chart/chart.component';
 import { PhaseFormComponent } from './pages/project/phase-form/phase-form.component';
+import { MainComponent } from './core/main/main.component';
+import { ToolbarComponent } from './core/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { PhaseFormComponent } from './pages/project/phase-form/phase-form.compon
     ProjectFormComponent,
     ChartComponent,
     PhaseFormComponent,
+    MainComponent,
+    ToolbarComponent,
   ],
   imports: [
     BrowserModule,

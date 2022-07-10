@@ -252,7 +252,7 @@ export class ChartComponent implements OnInit {
     this.chartGantt = this.service.getProjects().pipe(
       map(project => this.generateHighChart(project))
       // Starting Chart with Testdata
-      //,startWith(this.initialOptions)
+      ,startWith(this.initialOptions)
     );
   }
 

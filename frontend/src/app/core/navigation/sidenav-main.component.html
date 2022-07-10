@@ -1,24 +1,27 @@
-<div class="nav-container">
-  <!-- <mat-toolbar>
-    <mat-button class="icon-button">
-      <mat-icon>menu</mat-icon>
-    </mat-button>
-
-    <h1>Projectportfoliomanagement</h1>
-    <img src="../../../assets/img/logo.png" />
-  </mat-toolbar> -->
-  <!-- <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #snav fixedTopGap="56">
-      <mat-nav-list>
-        <mat-list-item routerLink="/add-project/">
-          <mat-icon>note_add</mat-icon>Neues Projekt</mat-list-item
-        >
-      </mat-nav-list>
-      <mat-sidenav-content>
-        <app-chart></app-chart>
-        <app-phase-form></app-phase-form>
-        <app-project-form></app-project-form
-      ></mat-sidenav-content>
-    </mat-sidenav>
-  </mat-sidenav-container> -->
+<div class="sidenav">
+  <div class="logo">
+    <a href="/" class="simple-text logo-mini">
+      <div class="logo-img">
+        <img src="../../../assets/img/logo.png" />
+      </div>
+    </a>
+    <a href="/" class="simple-text logo-normal"> Projektmanager </a>
+  </div>
+  <ul class="nav">
+    <li class="active">
+      <a routerLink="/"
+        ><i><mat-icon>home</mat-icon></i>Home</a
+      >
+    </li>
+    <li class="active">
+      <a routerLink="/add-project"
+        ><i><mat-icon>add</mat-icon></i>Hinzufügen</a
+      >
+    </li>
+    <li class="active">
+      <a routerLink="/edit-phase"
+        ><i><mat-icon>edit</mat-icon></i>Bearbeiten</a
+      >
+    </li>
+  </ul>
 </div>

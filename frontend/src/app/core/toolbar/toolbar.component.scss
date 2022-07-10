@@ -1,0 +1,17 @@
+@import '../../styles/styles';
+@import '../../styles/variables';
+
+.bg-dark {
+  background-color: $light-gray !important;
+}
+.sidenav-button {
+  display: inline;
+  color: rgba(255, 255, 255, 0.412);
+  margin-right: 10px;
+  transition: all 0.3s ease 0s;
+}
+
+.sidenav-button:hover {
+  color: rgb(255, 255, 255);
+  transition: all 0.3s ease 0s;
+}

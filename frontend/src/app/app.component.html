@@ -1,6 +1,7 @@
+<app-toolbar [inputSidenav]="sidenav"></app-toolbar>
 <mat-sidenav-container>
-  <mat-sidenav-content>
-  <!-- <sidenav-main></sidenav-main> -->
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
+  <mat-sidenav #sidenav mode="side" opened
+    ><sidenav-main></sidenav-main
+  ></mat-sidenav>
+  <mat-sidenav-content><router-outlet></router-outlet></mat-sidenav-content>
 </mat-sidenav-container>
