@@ -1,7 +1,7 @@
 import {
   ProjectDto,
   ProjectService,
-} from './../../pages/project/service/project.service';
+} from './../../../pages/project/service/project.service';
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import Accessibility from 'highcharts/modules/accessibility';

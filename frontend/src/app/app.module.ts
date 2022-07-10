@@ -29,7 +29,7 @@ import {
   TranslateService,
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { ChartComponent } from './shared/chart/chart.component';
+import { ChartComponent } from './shared/component/chart/chart.component';
 import { PhaseFormComponent } from './pages/project/phase-form/phase-form.component';
 
 @NgModule({
