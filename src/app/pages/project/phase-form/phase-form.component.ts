@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PhaseDto } from '../service/project.service';
 
@@ -13,12 +13,12 @@ export class PhaseFormComponent {
 
   constructor(private router: Router) {}
 
-  phaseForm = new FormGroup({
-    phaseName: new FormControl(),
-    phaseStart: new FormControl(),
-    phaseEnd: new FormControl(),
-    phaseCompleted: new FormControl(0),
-    phaseMilestone: new FormControl(false),
+  phaseForm = new UntypedFormGroup({
+    phaseName: new UntypedFormControl(),
+    phaseStart: new UntypedFormControl(),
+    phaseEnd: new UntypedFormControl(),
+    phaseCompleted: new UntypedFormControl(0),
+    phaseMilestone: new UntypedFormControl(false),
   });
 
   onSubmit() {

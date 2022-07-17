@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 import { ProjectService, ProjectDto } from '../service/project.service';
 
 @Component({
@@ -13,12 +13,12 @@ export class ProjectFormComponent implements OnInit {
 
   constructor(private service: ProjectService, private router: Router) {}
 
-  projectForm = new FormGroup({
-    projectNumber: new FormControl({ disabled: 'true' }),
-    projectName: new FormControl(),
-    projectDescription: new FormControl(),
-    projectStart: new FormControl({ disabled: 'true', value: 'dd.MM.yyyy' }),
-    projectEnd: new FormControl({ disabled: 'true', value: 'dd.MM.yyyy' }),
+  projectForm = new UntypedFormGroup({
+    projectNumber: new UntypedFormControl({ disabled: 'true' }),
+    projectName: new UntypedFormControl(),
+    projectDescription: new UntypedFormControl(),
+    projectStart: new UntypedFormControl({ disabled: 'true', value: 'dd.MM.yyyy' }),
+    projectEnd: new UntypedFormControl({ disabled: 'true', value: 'dd.MM.yyyy' }),
   });
 
   ngOnInit(): void {
