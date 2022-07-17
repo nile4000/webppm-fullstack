@@ -11,7 +11,7 @@
 
 html,
 body {
-  position:relative;
+  position: relative;
   height: 100%;
 }
 body {
@@ -23,7 +23,6 @@ body {
   color: $dark-blue;
   text-align: left;
   background-color: $light-blue;
-
 }
 
 // buttons
@@ -75,15 +74,12 @@ button:disabled {
 
 //charts
 .chart-container {
-  width: 600px;
-  // height: 100%;
-  padding-left: 100px;
-  padding-right: 100px;
+  // flex: auto;
+  // padding-left: 100px;
+  // padding-right: 100px;
 
   .chart {
-    //width: 100%;
-    height: auto;
-    display: block;
+
   }
 }
 
