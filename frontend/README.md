@@ -13,7 +13,7 @@ Prerequisites development environment:
 * [NodeJS - 14.15.0](https://nodejs.org/en/download/releases/)
 * [Firefox - Version 100, Windows 11](https://www.mozilla.org/de/firefox/new/)
 * [Visual Studio Code - newest]
-* [Git - 2.34.1.windows.1](https://git-scm.com/)
+* [GitHub - 2.34.1.windows.1](https://git-scm.com/)
 * [Angular CLI - 12](https://github.com/angular/angular-cli)
 
 ## Running the Development server
