@@ -29,7 +29,7 @@ export class ChartComponent implements OnInit {
   editButton = document?.getElementById('btnEditSelected') as HTMLInputElement;
 
   // Initialize Testproject Data
-  initialProjects = [
+  initialData = [
     {
       name: 'ABCD',
       type: undefined,
@@ -136,39 +136,8 @@ export class ChartComponent implements OnInit {
     },
   ];
 
-  initialOptions: Highcharts.Options = {
-    credits: {
-      enabled: false,
-    },
-
-    title: {
-      text: 'Übersicht',
-      align: 'left',
-    },
-    tooltip: {
-      enabled: true,
-    },
-    plotOptions: {
-      series: {
-        animation: false,
-        dragDrop: {
-          draggableX: true,
-          draggableY: true,
-          dragMinY: 0,
-          dragMaxY: 2,
-        },
-        dataLabels: {
-          enabled: true,
-          style: {
-            cursor: 'default',
-            pointerEvents: 'auto',
-          },
-        },
-        allowPointSelect: true,
-        cursor: 'pointer',
-      },
-    },
-    series: this.initialProjects,
+  initialDataOptions: Highcharts.Options = {
+    series: this.initialData,
     yAxis: {
       type: 'category',
       max: 1,
@@ -178,7 +147,7 @@ export class ChartComponent implements OnInit {
             title: {
               text: 'Projekt',
             },
-            categories: this.map(this.initialProjects, s => {
+            categories: this.map(this.initialData, s => {
               return s.name;
             }),
           },
@@ -191,68 +160,14 @@ export class ChartComponent implements OnInit {
     private service: ProjectService,
     public chartsService: ChartService,
     private router: Router
-  ) {
-    // Chart translations
-    Highcharts.setOptions({
-      lang: {
-        decimalPoint: ',',
-        thousandsSep: '.',
-        loading: 'Daten werden geladen...',
-        months: [
-          'Januar',
-          'Februar',
-          'März',
-          'April',
-          'Mai',
-          'Juni',
-          'Juli',
-          'August',
-          'September',
-          'Oktober',
-          'November',
-          'Dezember',
-        ],
-        weekdays: [
-          'Sonntag',
-          'Montag',
-          'Dienstag',
-          'Mittwoch',
-          'Donnerstag',
-          'Freitag',
-          'Samstag',
-        ],
-        shortMonths: [
-          'Jan',
-          'Feb',
-          'Mär',
-          'Apr',
-          'Mai',
-          'Jun',
-          'Jul',
-          'Aug',
-          'Sep',
-          'Okt',
-          'Nov',
-          'Dez',
-        ],
-        rangeSelectorFrom: 'Von',
-        rangeSelectorTo: 'Bis',
-        rangeSelectorZoom: 'Zeitraum',
-        downloadPNG: 'Download als PNG-Bild',
-        downloadJPEG: 'Download als JPEG-Bild',
-        downloadPDF: 'Download als PDF-Dokument',
-        downloadSVG: 'Download als SVG-Bild',
-        resetZoom: 'Zoom zurücksetzen',
-        resetZoomTitle: 'Zoom zurücksetzen',
-      },
-    });
-  }
+  ) {}
 
   ngOnInit() {
     this.chartGantt = this.service.getProjects().pipe(
-      map(project => this.generateHighChart(project))
+      map(project => this.generateHighChart(project)),
+
       // Starting Chart with Testdata
-      ,startWith(this.initialOptions)
+      startWith(this.initialDataOptions)
     );
   }
 
@@ -262,36 +177,6 @@ export class ChartComponent implements OnInit {
 
   generateHighChart(project: ProjectDto[]): Highcharts.Options {
     return {
-      credits: {
-        enabled: false,
-      },
-      title: {
-        text: 'Übersicht',
-        align: 'left',
-      },
-      tooltip: {
-        enabled: true,
-      },
-      plotOptions: {
-        series: {
-          animation: false,
-          dragDrop: {
-            draggableX: true,
-            draggableY: true,
-            dragMinY: 0,
-            dragMaxY: 2,
-          },
-          dataLabels: {
-            enabled: true,
-            style: {
-              cursor: 'default',
-              pointerEvents: 'auto',
-            },
-          },
-          allowPointSelect: true,
-          cursor: 'pointer',
-        },
-      },
       series: project,
       yAxis: {
         type: 'category',
