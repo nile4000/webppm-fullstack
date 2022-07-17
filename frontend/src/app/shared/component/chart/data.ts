@@ -1,19 +1,26 @@
-const chartData = [
+import { Project } from '../../model/Project';
+
+const chartData: Project[] = [
   {
+    number: '',
     name: 'Project 1',
     type: undefined,
+    description: 'Project 1 description',
     data: [
       {
         name: 'Initialisierung',
         start: Date.UTC(2021, 12, 1),
         end: Date.UTC(2021, 12, 16),
         y: 0,
-        completed: 4.2,
+        completed: 1,
+        milestone: false,
       },
       {
-        name: 'Meilenstein 1',
+        name: 'Meilenstein Initialisierung',
         start: Date.UTC(2021, 12, 21),
+        end: Date.UTC(2021, 12, 21),
         y: 0,
+        completed: 0,
         milestone: true,
       },
       {
@@ -22,11 +29,14 @@ const chartData = [
         end: Date.UTC(2022, 1, 19),
         y: 0,
         completed: 1,
+        milestone: false,
       },
       {
-        name: 'Meilenstein 2',
+        name: 'Meilenstein Konzept',
         start: Date.UTC(2022, 1, 25),
+        end: Date.UTC(2022, 1, 25),
         y: 0,
+        completed: 0,
         milestone: true,
       },
       {
@@ -34,12 +44,15 @@ const chartData = [
         start: Date.UTC(2022, 1, 31),
         end: Date.UTC(2022, 3, 31),
         y: 0,
-        completed: 0.89,
+        completed: 0,
+        milestone: false,
       },
       {
-        name: 'Meilenstein 3',
+        name: 'Meilenstein Realisierung',
         start: Date.UTC(2022, 4, 7),
+        end: Date.UTC(2022, 4, 7),
         y: 0,
+        completed: 0,
         milestone: true,
       },
       {
@@ -48,12 +61,15 @@ const chartData = [
         end: Date.UTC(2022, 4, 20),
         y: 0,
         completed: 0,
+        milestone: false,
       },
     ],
   },
   {
-    name: 'Web-Projekt',
+    number: '',
+    name: 'ABC Project',
     type: undefined,
+    description: 'ABC Project Description',
     data: [
       {
         name: 'Initialisierung',
@@ -61,11 +77,14 @@ const chartData = [
         end: Date.UTC(2022, 2, 15),
         y: 1,
         completed: 1,
+        milestone: false,
       },
       {
-        name: 'Meilenstein 1',
+        name: 'Meilenstein Initialisierung',
         start: Date.UTC(2022, 2, 17),
+        end: Date.UTC(2022, 2, 17),
         y: 1,
+        completed: 0,
         milestone: true,
       },
       {
@@ -73,12 +92,15 @@ const chartData = [
         start: Date.UTC(2022, 2, 19),
         end: Date.UTC(2022, 4, 30),
         y: 1,
-        completed: 1.1,
+        completed: 1,
+        milestone: false,
       },
       {
-        name: 'Meilenstein 2',
+        name: 'Meilenstein Konzept',
         start: Date.UTC(2022, 5, 2),
+        end: Date.UTC(2022, 5, 2),
         y: 1,
+        completed: 0,
         milestone: true,
       },
       {
@@ -87,11 +109,14 @@ const chartData = [
         end: Date.UTC(2022, 5, 31),
         y: 1,
         completed: 0.69,
+        milestone: false,
       },
       {
-        name: 'Meilenstein 3',
+        name: 'Meilenstein Realisierung',
         start: Date.UTC(2022, 6, 4),
+        end: Date.UTC(2022, 6, 4),
         y: 1,
+        completed: 0,
         milestone: true,
       },
       {
@@ -99,7 +124,8 @@ const chartData = [
         start: Date.UTC(2022, 6, 6),
         end: Date.UTC(2022, 6, 15),
         y: 1,
-        completed: 0,
+        completed: 1,
+        milestone: false,
       },
     ],
   },

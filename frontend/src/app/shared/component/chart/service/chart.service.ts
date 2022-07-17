@@ -6,7 +6,6 @@ import * as Highcharts from 'highcharts';
 })
 export class ChartService {
   constructor() {
-    // Chart translations
     Highcharts.setOptions({
       credits: {
         enabled: false,
@@ -88,6 +87,8 @@ export class ChartService {
         downloadSVG: 'Download als SVG-Bild',
         resetZoom: 'Zoom zurücksetzen',
         resetZoomTitle: 'Zoom zurücksetzen',
+        viewFullscreen: 'Vollbild anzeigen',
+        printChart: 'Drucken',
       },
     });
   }

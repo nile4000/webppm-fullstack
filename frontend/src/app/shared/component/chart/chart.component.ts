@@ -56,9 +56,10 @@ export class ChartComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+
+    console.log("chartGenerated")
     this.chartGantt = this.service.getProjects().pipe(
       map(project => this.generateHighChart(project)),
-
       // Starting Chart with Testdata
       startWith(this.initialDataOptions)
     );
