@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PhaseDto } from '../service/project.service';
+import { PhaseDto } from 'src/app/shared/model/Phase';
 
 @Component({
   selector: 'app-phase-form',
@@ -33,6 +33,7 @@ export class PhaseFormComponent {
       end: this.phaseForm.get('phaseEnd').value,
       completed: this.phaseForm.get('phaseCompleted').value,
       y: undefined,
+      milestone: this.phaseForm.get('phaseMilestone').value,
     };
     return this.phase;
   }

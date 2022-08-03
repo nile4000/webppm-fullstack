@@ -10,9 +10,9 @@ export class Project {
 }
 
 export interface ProjectDto {
-  number: number;
+  number: string;
   name: string;
-  description: string;
   type: any;
+  description: string;
   data: PhaseDto[];
 }

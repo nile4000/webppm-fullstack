@@ -1,11 +1,11 @@
 export class Phase {
   constructor(
-    public name: string,
-    public start: number,
-    public end: number,
-    public y: number,
-    public completed: number,
-    public milestone: boolean,
+    public name: string = '',
+    public start: number = 0,
+    public end: number = 0,
+    public y: number = null,
+    public completed: number = 0,
+    public milestone: boolean = false
   ) {}
 }
 
@@ -15,4 +15,5 @@ export interface PhaseDto {
   end: number;
   y: number;
   completed: number;
+  milestone: boolean;
 }

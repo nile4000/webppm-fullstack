@@ -1,4 +1,4 @@
-import { Project } from '../../model/Project';
+import { Project } from '../model/Project';
 
 const chartData: Project[] = [
   {
