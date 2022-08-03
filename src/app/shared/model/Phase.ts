@@ -8,3 +8,11 @@ export class Phase {
     public milestone: boolean,
   ) {}
 }
+
+export interface PhaseDto {
+  name: string;
+  start: number;
+  end: number;
+  y: number;
+  completed: number;
+}

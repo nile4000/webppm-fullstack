@@ -1,4 +1,4 @@
-import { Phase } from './Phase';
+import { Phase, PhaseDto } from './Phase';
 export class Project {
   constructor(
     public number: string,
@@ -7,4 +7,12 @@ export class Project {
     public description: string,
     public data: Phase[] = []
   ) {}
+}
+
+export interface ProjectDto {
+  number: number;
+  name: string;
+  description: string;
+  type: any;
+  data: PhaseDto[];
 }

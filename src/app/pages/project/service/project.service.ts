@@ -2,23 +2,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { ProjectDto } from 'src/app/shared/model/Project';
 import { environment } from 'src/environments/environment';
-
-export interface ProjectDto {
-  number: number;
-  name: string;
-  description: string;
-  type: any;
-  data: PhaseDto[];
-}
-
-export interface PhaseDto {
-  name: string;
-  start: number;
-  end: number;
-  y: number;
-  completed: number;
-}
 
 @Injectable({
   providedIn: 'root',

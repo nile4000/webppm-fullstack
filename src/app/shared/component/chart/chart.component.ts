@@ -1,7 +1,4 @@
-import {
-  ProjectDto,
-  ProjectService,
-} from './../../../pages/project/service/project.service';
+import { ProjectService } from './../../../pages/project/service/project.service';
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import Accessibility from 'highcharts/modules/accessibility';
@@ -12,6 +9,7 @@ import { Observable } from 'rxjs';
 import { ChartService } from './service/chart.service';
 import { Router } from '@angular/router';
 import chartData from './data';
+import { ProjectDto } from '../../model/Project';
 
 HC_gantt(Highcharts);
 Accessibility(Highcharts);
@@ -29,7 +27,7 @@ export class ChartComponent implements OnInit {
 
   editButton = document?.getElementById('btnEditSelected') as HTMLInputElement;
 
-  initialDataOptions: Highcharts.Options = {
+  initialData: Highcharts.Options = {
     series: chartData,
     yAxis: {
       type: 'category',
@@ -56,12 +54,11 @@ export class ChartComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-
-    console.log("chartGenerated")
+    console.log('chartGenerated');
     this.chartGantt = this.service.getProjects().pipe(
       map(project => this.generateHighChart(project)),
       // Starting Chart with Testdata
-      startWith(this.initialDataOptions)
+      startWith(this.initialData)
     );
   }
 
