@@ -38,6 +38,8 @@ button {
   margin-bottom: 1rem;
   margin-top: 1rem;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button-group {
@@ -51,9 +53,30 @@ button {
   flex: 1 1 auto;
 }
 
+mat-label {
+  color: $dark-gray;
+  margin-bottom: 10px;
+}
+
+mat-list-item {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  h4 {
+    margin: 0;
+    text-transform: uppercase;
+  }
+  p {
+    margin-left: 5px;
+    color: $dark-gray;
+  }
+}
+
 button:hover {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.119);
   color: white;
+  justify-self: start;
 }
 
 button:disabled {
@@ -74,12 +97,7 @@ button:disabled {
 
 //charts
 .chart-container {
-  // flex: auto;
-  // padding-left: 100px;
-  // padding-right: 100px;
-
   .chart {
-
   }
 }
 
