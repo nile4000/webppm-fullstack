@@ -48,9 +48,9 @@ export class ProjectService {
     );
   }
 
-  getLastProjectId(): Observable<Number> {
+  getLastProjectId(): Observable<number> {
     return this.httpClient
-      .get<Number>(`${environment.backendService}/project/last_id`)
+      .get<number>(`${environment.backendService}/project/last_id`)
       .pipe(catchError(this.errorHandler));
   }
 

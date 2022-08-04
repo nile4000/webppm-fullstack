@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 import { ProjectDto } from 'src/app/shared/model/Project';
 import { LocalProjectService } from '../service/localProject.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-project-form',
@@ -13,6 +14,7 @@ import { LocalProjectService } from '../service/localProject.service';
 export class ProjectFormComponent implements OnInit {
   project!: ProjectDto;
   initialPhaseData: Phase[] = [];
+  lastProjectId: number;
 
   constructor(private service: LocalProjectService, private router: Router) {}
 
@@ -31,16 +33,17 @@ export class ProjectFormComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    // setTimeout(() => {
-    //   // set initial projectNumber from service last_id
-    //   this.service.getLastProjectId().subscribe(id => {
-    //     // if id is null, set it to 1
-    //     if (!id) {
-    //       id = 1;
-    //     }
-    //     this.projectForm.controls.projectNumber.setValue(id);
-    //   });
-    // }, 100);
+    setTimeout(() => {
+      // set initial projectNumber from service last_id
+      this.service.getLastProjectId().subscribe(id => {
+        // if id is null, set it to 1
+        if (!id) {
+          id = 1;
+        }
+        this.lastProjectId = id;
+        this.projectForm.controls.projectNumber.setValue(id);
+      });
+    }, 100);
   }
 
   retrieveFormDataProject(): ProjectDto {
@@ -49,7 +52,7 @@ export class ProjectFormComponent implements OnInit {
       name: 'Phase 1',
       start: Date.UTC(2022, 0, 1),
       end: Date.UTC(2022, 1, 1),
-      y: 2,
+      y: this.lastProjectId,
       completed: 0,
       milestone: false,
     });
@@ -60,14 +63,14 @@ export class ProjectFormComponent implements OnInit {
       name: this.projectForm.get('projectName').value,
       type: undefined,
       description: this.projectForm.get('projectDescription').value,
-      // adding dummy-phase to project
+      // adding a dummy-phase to project
       data: this.initialPhaseData,
     };
     return this.project;
   }
 
   onSubmit() {
-    // adding projectdata
+    // submit project to service
     this.service.createProject(this.retrieveFormDataProject());
     // navigate to project-list
     this.router.navigate(['/']);

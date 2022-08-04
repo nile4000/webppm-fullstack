@@ -20,7 +20,7 @@ export class LocalProjectService {
     return of(chartData);
   }
 
-  getLastProjectId(): Observable<Number> {
+  getLastProjectId(): Observable<number> {
     return of(chartData.length);
   }
 
