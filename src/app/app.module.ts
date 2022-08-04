@@ -33,6 +33,8 @@ import { ChartComponent } from './shared/component/chart/chart.component';
 import { PhaseFormComponent } from './pages/project/phase-form/phase-form.component';
 import { MainComponent } from './core/main/main.component';
 import { ToolbarComponent } from './core/toolbar/toolbar.component';
+import { ProjectListComponent } from './pages/project/project-list/project-list.component';
+import { MatTreeModule } from '@angular/material/tree';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { ToolbarComponent } from './core/toolbar/toolbar.component';
     PhaseFormComponent,
     MainComponent,
     ToolbarComponent,
+    ProjectListComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +76,7 @@ import { ToolbarComponent } from './core/toolbar/toolbar.component';
     HighchartsChartModule,
     MatDatepickerModule,
     MatCheckboxModule,
+    MatTreeModule,
   ],
   providers: [],
   exports: [MatSidenavModule],
