@@ -22,7 +22,6 @@ export class ChartService {
         animation: false,
         dragDrop: {
           draggableX: true,
-          draggableY: true,
           dragMinY: 0,
           dragMaxY: 2,
         },

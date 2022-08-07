@@ -2,12 +2,13 @@
   <mat-list-item
     *ngFor="let project of chartData"
     (click)="onSelectProject(project)">
-    <mat-icon matListIcon>edit</mat-icon>
+    <!-- <mat-icon matListIcon>view</mat-icon> -->
     <h4 matLine>{{ project.name }}</h4>
     <p matLine>{{ project.description }}</p>
+    <span>50%</span>
   </mat-list-item>
 </mat-nav-list>
-<div *ngIf="selectedProject">
+<!-- <div *ngIf="selectedProject">
   <div>
     <label for="phase-name"
       >{{ selectedProject.name | uppercase }} phasen:
@@ -20,4 +21,4 @@
       </mat-list-item>
     </mat-list>
   </div>
-</div>
+</div> -->

@@ -16,6 +16,6 @@ Prerequisites development environment:
 * [GitHub - 2.34.1.windows.1](https://git-scm.com/)
 * [Angular CLI - 12](https://github.com/angular/angular-cli)
 
-## Running the Development server
+## Running the Development server (Hot-Reload)
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

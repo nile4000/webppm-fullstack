@@ -1,8 +1,8 @@
+import Draggable from 'highcharts/modules/draggable-points';
 import { LocalProjectService } from './../../../pages/project/service/localProject.service';
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import Accessibility from 'highcharts/modules/accessibility';
-import Draggable from 'highcharts/modules/draggable-points';
 import HC_gantt from 'highcharts/modules/gantt';
 import { map, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -35,7 +35,6 @@ export class ChartComponent implements OnInit {
         },
       },
     },
-
     yAxis: {
       type: 'category',
       max: 1,
@@ -56,12 +55,21 @@ export class ChartComponent implements OnInit {
 
   constructor(
     private service: LocalProjectService,
-    public chartsService: ChartService,
-    private router: Router
+    public chartsService: ChartService
   ) {}
 
   ngOnInit() {
-    console.log(chartData);
+    Highcharts.setOptions({
+      plotOptions: {
+        series: {
+          point: {
+            events: {
+              drop: this.editPhase,
+            },
+          },
+        },
+      },
+    });
     this.chartGantt = this.service.getProjects().pipe(
       map(project => this.generateHighChart(project)),
       // Starting Chart with Testdata
@@ -69,8 +77,19 @@ export class ChartComponent implements OnInit {
     );
   }
 
-  editPhase() {
-    this.router.navigate(['/edit-phase']);
+  editPhase(e: Highcharts.PointDropEventObject) {
+    let dropStartPoint = e.newPoint['start'] as number;
+    let dropEndPoint = e.newPoint['end'] as number;
+    let dropPointY = e.target['y'] as number;
+    let dropPointName = e.target['name'] as string;
+    let allPhases = chartData[dropPointY].data;
+
+    allPhases.forEach(phase => {
+      if (phase.name === dropPointName) {
+        phase.start = dropStartPoint;
+        phase.end = dropEndPoint;
+      }
+    });
   }
 
   generateHighChart(project: ProjectDto[]): Highcharts.Options {
