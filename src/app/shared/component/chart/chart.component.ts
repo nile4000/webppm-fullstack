@@ -7,7 +7,6 @@ import HC_gantt from 'highcharts/modules/gantt';
 import { map, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ChartService } from './service/chart.service';
-import { Router } from '@angular/router';
 import chartData from '../../data/data';
 import { ProjectDto } from '../../model/Project';
 

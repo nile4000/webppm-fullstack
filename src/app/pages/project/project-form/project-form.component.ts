@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 import { ProjectDto } from 'src/app/shared/model/Project';
 import { LocalProjectService } from '../service/localProject.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-project-form',

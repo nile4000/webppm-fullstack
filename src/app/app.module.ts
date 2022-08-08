@@ -21,14 +21,7 @@ import { PagenotfoundComponent } from './pages/error/pagenotfound/pagenotfound.c
 import { ProjectFormComponent } from './pages/project/project-form/project-form.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
-// import ngx-translate and the http loader
-import {
-  TranslateLoader,
-  TranslateModule,
-  TranslateService,
-} from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { ChartComponent } from './shared/component/chart/chart.component';
 import { PhaseFormComponent } from './pages/project/phase-form/phase-form.component';
 import { MainComponent } from './core/main/main.component';
@@ -56,13 +49,6 @@ import { MatTreeModule } from '@angular/material/tree';
     AppRoutingModule,
     // ngx-translate and the loader module
     HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
-      },
-    }),
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
@@ -76,20 +62,11 @@ import { MatTreeModule } from '@angular/material/tree';
     HighchartsChartModule,
     MatDatepickerModule,
     MatCheckboxModule,
+    MatFormFieldModule,
     MatTreeModule,
   ],
   providers: [],
   exports: [MatSidenavModule],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule {
-  constructor(private translate: TranslateService) {
-    translate.setDefaultLang('de');
-  }
-}
-
-// required for AOT compilation
-export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http);
-}
+export class AppModule {}
