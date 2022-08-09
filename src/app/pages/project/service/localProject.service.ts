@@ -1,3 +1,4 @@
+import { PhaseDto } from './../../../shared/model/Phase';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
@@ -26,6 +27,12 @@ export class LocalProjectService {
   getProject(id: string): Observable<ProjectDto> {
     const project = chartData.find(project => project.id === id)!;
     return of(project);
+  }
+
+  getPhaseById(id: string): Observable<PhaseDto> {
+    // const phase = chartData.find(phase => phase.id === id)!;
+    // return of(phase);
+    return of(null);
   }
 
   getLastProjectId(): Observable<number> {
