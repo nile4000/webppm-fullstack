@@ -18,19 +18,13 @@ export class ProjectListComponent implements OnInit {
 
   onSelectProject(project: Project): void {
     this.selectedProject = project;
-    console.log(this.selectedProject);
-    this.router.navigate(['/project/', this.selectedProject.id]);
+    console.log("wes");
+    this.router.navigate(['/edit-project', this.selectedProject.id]);
   }
 
   onSelectPhase(phase: Phase): void {
     this.selectedPhase = phase;
   }
-
-  // totalPhasePercentage(project: Project) {
-  //   project.data.forEach((phase: Phase) => {
-  //     return 'a' + phase.completed;
-  //   });
-  // }
 
   ngOnInit(): void {}
 }

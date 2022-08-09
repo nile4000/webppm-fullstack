@@ -8,6 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '', component: MainComponent }, // Home route
   { path: 'add-project', component: ProjectFormComponent },
+  { path: 'edit-project/:projectId', component: ProjectFormComponent },
   { path: 'edit-phase', component: PhaseFormComponent },
   { path: '**', component: PagenotfoundComponent }, // Wildcard route for a 404 page.
 ];
