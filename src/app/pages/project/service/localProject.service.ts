@@ -14,10 +14,18 @@ export class LocalProjectService {
     return chartData.push(project);
   }
 
-  editProject(project: ProjectDto) {}
+  updateProject(project: ProjectDto) {
+    const index = chartData.findIndex(p => p.id === project.id);
+    chartData[index] = project;
+  }
 
   getProjects(): Observable<ProjectDto[]> {
     return of(chartData);
+  }
+
+  getProject(id: string): Observable<ProjectDto> {
+    const project = chartData.find(project => project.id === id)!;
+    return of(project);
   }
 
   getLastProjectId(): Observable<number> {

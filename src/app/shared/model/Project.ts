@@ -1,7 +1,7 @@
 import { Phase, PhaseDto } from './Phase';
 export class Project {
   constructor(
-    public number: string,
+    public id: string,
     public name: string,
     public type: any,
     public description: string,
@@ -10,7 +10,7 @@ export class Project {
 }
 
 export interface ProjectDto {
-  number: string;
+  id: string;
   name: string;
   type: any;
   description: string;

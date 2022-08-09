@@ -19,7 +19,7 @@ export class ProjectListComponent implements OnInit {
   onSelectProject(project: Project): void {
     this.selectedProject = project;
     console.log(this.selectedProject);
-    this.router.navigate(['/project/', this.selectedProject.number]);
+    this.router.navigate(['/project/', this.selectedProject.id]);
   }
 
   onSelectPhase(phase: Phase): void {

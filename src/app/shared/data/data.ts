@@ -2,7 +2,7 @@ import { Project } from '../model/Project';
 
 const chartData: Project[] = [
   {
-    number: '0',
+    id: '0',
     name: 'Project 1',
     type: undefined,
     description: 'Project 1 description',
@@ -66,7 +66,7 @@ const chartData: Project[] = [
     ],
   },
   {
-    number: '1',
+    id: '1',
     name: 'ABC Project',
     type: undefined,
     description: 'ABC Project Description',
