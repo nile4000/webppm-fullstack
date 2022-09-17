@@ -23,9 +23,7 @@ export class ChartComponent implements OnInit {
   chartGantt: Observable<Highcharts.Options>;
   Highcharts: typeof Highcharts = Highcharts;
   map = Highcharts.map;
-  editButtonHidden: boolean = true;
-
-  editButton = document?.getElementById('btnEditSelected') as HTMLInputElement;
+  isDisabled: boolean = true;
 
   initialData: Highcharts.Options = {
     chart: {
@@ -64,7 +62,7 @@ export class ChartComponent implements OnInit {
         series: {
           point: {
             events: {
-              drop: this.editPhase,
+              // drop: this.editPhase,
               click: this.openPhase,
             },
           },
@@ -79,11 +77,12 @@ export class ChartComponent implements OnInit {
   }
 
   openPhase(e: Highcharts.PointClickEventObject) {
-    console.log(this.editButtonHidden)
-    this.editButtonHidden = !this.editButtonHidden;
+      let ab = document.querySelector('#btnEditSelected') as HTMLButtonElement;
+      ab.disabled = false;
   }
 
-  editPhase(e: Highcharts.PointDropEventObject) {
+  editPhase(e) {
+    console.log(e);
     let dropStartPoint = e.newPoint['start'] as number;
     let dropEndPoint = e.newPoint['end'] as number;
     let dropPointY = e.target['y'] as number;
