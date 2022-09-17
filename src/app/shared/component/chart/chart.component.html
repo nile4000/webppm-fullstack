@@ -4,7 +4,19 @@
     [constructorType]="'ganttChart'"
     [options]="chartGantt | async"
     class="card-element"></highcharts-chart>
+  <button
+    id="btnEditSelected"
+    mat-button
+    [hidden]="isHidden"
+    (click)="editPhase()">
+    Bearbeiten
+  </button>
+  <button
+    id="btnDeleteSelected"
+    mat-button
+    color="warn"
+    [hidden]="isHidden"
+    (click)="deletePhase()">
+    Löschen
+  </button>
 </div>
-<button id="btnEditSelected" mat-button [hidden]="isDisabled" (click)="editPhase($event)">
-  Bearbeiten
-</button>

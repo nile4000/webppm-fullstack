@@ -23,7 +23,8 @@ export class ChartComponent implements OnInit {
   chartGantt: Observable<Highcharts.Options>;
   Highcharts: typeof Highcharts = Highcharts;
   map = Highcharts.map;
-  isDisabled: boolean = true;
+  isHidden: boolean = true;
+  selectedPhase: any = {};
 
   initialData: Highcharts.Options = {
     chart: {
@@ -57,12 +58,13 @@ export class ChartComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.selectedPhase = null;
+
     Highcharts.setOptions({
       plotOptions: {
         series: {
           point: {
             events: {
-              // drop: this.editPhase,
               click: this.openPhase,
             },
           },
@@ -76,25 +78,24 @@ export class ChartComponent implements OnInit {
     );
   }
 
+  editBtn;
+  deleteBtn;
+
   openPhase(e: Highcharts.PointClickEventObject) {
-      let ab = document.querySelector('#btnEditSelected') as HTMLButtonElement;
-      ab.disabled = false;
+    this.isHidden = !this.isHidden;
+    this.editBtn = document.querySelector('#btnEditSelected') as HTMLButtonElement;
+    this.editBtn.hidden = !this.isHidden;
+    this.deleteBtn = document.querySelector('#btnDeleteSelected') as HTMLButtonElement;
+    this.deleteBtn.hidden = !this.isHidden;
+    this.selectedPhase = e.point;
   }
 
-  editPhase(e) {
-    console.log(e);
-    let dropStartPoint = e.newPoint['start'] as number;
-    let dropEndPoint = e.newPoint['end'] as number;
-    let dropPointY = e.target['y'] as number;
-    let dropPointName = e.target['name'] as string;
-    let allPhases = chartData[dropPointY].data;
+  editPhase() {
+    this.chartsService.editPhase(this.selectedPhase);
+  }
 
-    allPhases.forEach(phase => {
-      if (phase.name === dropPointName) {
-        phase.start = dropStartPoint;
-        phase.end = dropEndPoint;
-      }
-    });
+  deletePhase() {
+    this.chartsService.deletePhase(this.selectedPhase);
   }
 
   generateHighChart(project: ProjectDto[]): Highcharts.Options {

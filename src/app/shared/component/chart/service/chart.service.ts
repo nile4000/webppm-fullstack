@@ -80,10 +80,8 @@ export class ChartService {
       rangeSelectorFrom: 'Von',
       rangeSelectorTo: 'Bis',
       rangeSelectorZoom: 'Zeitraum',
-      downloadPNG: 'Download als PNG-Bild',
       downloadJPEG: 'Download als JPEG-Bild',
       downloadPDF: 'Download als PDF-Dokument',
-      downloadSVG: 'Download als SVG-Bild',
       resetZoom: 'Zoom zurücksetzen',
       resetZoomTitle: 'Zoom zurücksetzen',
       viewFullscreen: 'Vollbild anzeigen',
@@ -93,5 +91,13 @@ export class ChartService {
 
   constructor() {
     Highcharts.setOptions(this.defaultChartOptions);
+  }
+
+  editPhase(phase: any) {
+    console.log(phase);
+  }
+
+  deletePhase(phase: any) {
+    console.log(phase);
   }
 }
